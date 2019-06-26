@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import { connect } from 'react-redux';
+import {addRoad, removeRoad, getRoads, addToFavorites} from './store/actions/roadActions'
+
+import Header from './components/header';
+import RoadList from './components/roadsList';
+import Details from './components/details';
+
+function App({getRoadsAction, addRoadAction, removeRoadAction, AddToFavoritesAction}) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="row">
+        <div className="col-md-6">
+          <RoadList getRoads={getRoadsAction} addRoad={addRoadAction} removeRoad={removeRoadAction} />
+        </div>
+        <div className="col-md-6">
+          {<Details addToFavorites={AddToFavoritesAction}/>}
+        </div>
+      </div>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = store => {
+  return {
+    roads: store.roads
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getRoadsAction: roads => dispatch(getRoads(roads)),
+    addRoadAction: (id, title, description, isFavorite) => dispatch(addRoad(id, title, description, isFavorite)),
+    removeRoadAction: (id) => dispatch(removeRoad(id)),
+    AddToFavoritesAction: (id, isFavorite) => dispatch(addToFavorites(id, isFavorite))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+

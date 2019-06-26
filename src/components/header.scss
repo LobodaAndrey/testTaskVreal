@@ -1,0 +1,15 @@
+.main-header {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ddd;
+  padding: 20px 0;
+}
+
+.add-btn {
+  background-color: #178AC4;
+  border-radius: 5px;
+  display: block;
+  width: 100px;
+  max-height: 50px !important;
+  align-self: center;
+}
