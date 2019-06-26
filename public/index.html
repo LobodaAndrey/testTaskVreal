@@ -36,10 +36,29 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    
+
   <script src="https://kit.fontawesome.com/e3dffff19f.js"></script>
-  <!-- <script src="/__/firebase/6.2.3/firebase-app.js"></script>
-  <script src="/__/firebase/init.js"></script> -->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDrUxGydeeREENl4rprySqafLZQouMYhik",
+      authDomain: "roads-app.firebaseapp.com",
+      databaseURL: "https://roads-app.firebaseio.com",
+      projectId: "roads-app",
+      storageBucket: "",
+      messagingSenderId: "139182218075",
+      appId: "1:139182218075:web:3394ec7b03c25ec6"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </body>
 
 </html>

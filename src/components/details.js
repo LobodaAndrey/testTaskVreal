@@ -13,7 +13,6 @@ class Details extends Component {
         path: '',
       }
   }
-  
 
   render() {
     const {roads} = this.state

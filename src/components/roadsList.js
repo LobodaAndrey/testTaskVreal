@@ -63,8 +63,8 @@ class RoadsList extends Component {
       <React.Fragment>
         <input type="search" name="search" id="" placeholder="Search..." />
         <ul>
-          {roads.map((el) => (
-            <li onClick={() => this.switchActiveRoad(el.id)} key={el.title+el.shortDescription} className={el.isActive ? "active road-item": "road-item"}>
+          {roads.map((el, i) => (
+            <li onClick={() => this.switchActiveRoad(i)} key={el.title+el.shortDescription} className={el.isActive ? "active road-item": "road-item"}>
               <div className="road">
                 <i className="fas fa-arrows-alt"></i>
               </div>

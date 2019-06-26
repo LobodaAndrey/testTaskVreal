@@ -31,12 +31,13 @@ class Header extends React.Component {
           <Button variant="primary" onClick={this.handleShow}>
             Launch demo modal
         </Button>
-
           <Modal show={this.state.show} onHide={this.handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
+              <Modal.Title>Add new road</Modal.Title>
             </Modal.Header>
-            <Modal.Body><AddRoad /></Modal.Body>
+            <Modal.Body>
+              <AddRoad />
+            </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={this.handleClose}>
                 Close
