@@ -1,8 +1,7 @@
 import {GET_ROADS, ADD_NEW_ROAD, REMOVE_ROAD, ADD_TO_FAVORITES} from '../../constants';
 
 export const getRoads = (roads) => ({
-  type: GET_ROADS,
-  roads
+  type: GET_ROADS
 });
 
 export const addRoad = () => ({

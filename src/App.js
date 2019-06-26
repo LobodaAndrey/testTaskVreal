@@ -2,24 +2,16 @@ import React from 'react';
 import './App.css';
 
 import { connect } from 'react-redux';
-import {addRoad, removeRoad, getRoads, addToFavorites} from './store/actions/roadActions'
+import { addRoad, removeRoad, getRoads, addToFavorites } from './store/actions/roadActions'
 
 import Header from './components/header';
 import RoadList from './components/roadsList';
-import Details from './components/details';
 
-function App({getRoadsAction, addRoadAction, removeRoadAction, AddToFavoritesAction}) {
+function App({ getRoadsAction, addRoadAction, removeRoadAction, AddToFavoritesAction }) {
   return (
     <div className="App">
-      <Header />
-      <div className="row">
-        <div className="col-md-6">
-          <RoadList getRoads={getRoadsAction} addRoad={addRoadAction} removeRoad={removeRoadAction} />
-        </div>
-        <div className="col-md-6">
-          {<Details addToFavorites={AddToFavoritesAction}/>}
-        </div>
-      </div>
+      <Header addRoad={addRoadAction}/>
+      <RoadList addToFavorites={AddToFavoritesAction} removeRoad={removeRoadAction} getRoads={getRoadsAction} addRoad={addRoadAction}/>
     </div>
   );
 }
@@ -33,7 +25,7 @@ const mapStateToProps = store => {
 const mapDispatchToProps = dispatch => {
   return {
     getRoadsAction: roads => dispatch(getRoads(roads)),
-    addRoadAction: (id, title, description, isFavorite) => dispatch(addRoad(id, title, description, isFavorite)),
+    addRoadAction: (id, title, shortDescription, fullDescription, isFavorite) => dispatch(addRoad(id, title, shortDescription, fullDescription, isFavorite)),
     removeRoadAction: (id) => dispatch(removeRoad(id)),
     AddToFavoritesAction: (id, isFavorite) => dispatch(addToFavorites(id, isFavorite))
   }

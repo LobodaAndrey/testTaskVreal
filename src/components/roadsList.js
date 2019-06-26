@@ -1,87 +1,75 @@
 import React, { Component } from 'react';
 import './roadList.scss';
+import Details from '../components/details';
+import * as data from '../data.json';
+// import axios from 'axios';
 
 class RoadsList extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props)
     this.state = {
-      roads: [
-        {
-          id: 1,
-          title: 'Title 1',
-          isFavorite: true,
-          isActive: false,
-          length: 1.27,
-          shortDescription: 'Short description Lorem ipsum',
-          fullDescription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla perspiciatis saepe provident veritatis repellendus dignissimos nesciunt odio iure eum, itaque nemo soluta cupiditate, ipsa recusandae. Cum ullam vel eum neque.',
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla perspiciatis saepe provident veritatis repellendus dignissimos nesciunt odio iure eum, itaque nemo soluta cupiditate, ipsa recusandae. Cum ullam vel eum neque.',
-          path: '',
-        },
-        {
-          id: 2,
-          title: 'Title 2',
-          isFavorite: false,
-          isActive: true,
-          length: 1.55,
-          shortDescription: 'Short description Lorem ipsum',
-          fullDescription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla perspiciatis saepe provident veritatis repellendus dignissimos nesciunt odio iure eum, itaque nemo soluta cupiditate, ipsa recusandae. Cum ullam vel eum neque.',
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla perspiciatis saepe provident veritatis repellendus dignissimos nesciunt odio iure eum, itaque nemo soluta cupiditate, ipsa recusandae. Cum ullam vel eum neque.',
-          path: '',
-        },
-        {
-          id: 3,
-          title: 'Title 3',
-          isFavorite: false,
-          isActive: false,
-          length: 2.9,
-          shortDescription: 'Short description Lorem ipsum',
-          fullDescription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla perspiciatis saepe provident veritatis repellendus dignissimos nesciunt odio iure eum, itaque nemo soluta cupiditate, ipsa recusandae. Cum ullam vel eum neque.',
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla perspiciatis saepe provident veritatis repellendus dignissimos nesciunt odio iure eum, itaque nemo soluta cupiditate, ipsa recusandae. Cum ullam vel eum neque.',
-          path: '',
-        },
-        {
-          id: 4,
-          title: 'Title 4',
-          isFavorite: false,
-          isActive: false,
-          length: 2.55,
-          shortDescription: 'Short description Lorem ipsum',
-          fullDescription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla perspiciatis saepe provident veritatis repellendus dignissimos nesciunt odio iure eum, itaque nemo soluta cupiditate, ipsa recusandae. Cum ullam vel eum neque.',
-          path: '',
-        }
-      ]
+      roads: data.default.roads,
+      info: {
+      }
     }
   }
 
-  switchActiveRoad = (index) => {
-    console.log('changed' + index)
+  // componentDidMount() {
+  //   axios.get('https://roads-app.firebaseio.com/')
+  //   .then(function (response) {
+  //     // handle success
+  //     console.log(response);
+  //   })
+  //   .catch(function (error) {
+  //     // handle error
+  //     console.log(error);
+  //   })
+  //   .finally(function () {
+  //     // always executed
+  //   });
+  // }
+
+  switchActiveRoad = (el) => {
+    this.setState({
+      info: el
+    })
   }
 
   render() {
-    const { roads } = this.state
+    const { roads } = this.state;
+    const { addToFavorites, removeRoad} = this.props
+
     return (
       <React.Fragment>
-        <input type="search" name="search" id="" placeholder="Search..." />
-        <ul>
-          {roads.map((el, i) => (
-            <li onClick={() => this.switchActiveRoad(i)} key={el.title+el.shortDescription} className={el.isActive ? "active road-item": "road-item"}>
-              <div className="road">
-                <i className="fas fa-arrows-alt"></i>
-              </div>
-              <div className="road-info">
-                <div className="road-title">
-                  {el.isFavorite && <i className="fas fa-star"></i>}
-                  <h3>{el.title}</h3>
-                </div>
-                <p>{el.shortDescription = el.shortDescription.substr(0, 80)}</p>
-              </div>
-              <div className="path-length">
-                {el.length}
-              </div>
-              <i className="fas fa-chevron-right"></i>
-            </li>
-          ))}
-        </ul>
+        <div className="row">
+          <div className="col-md-7">
+            <input className="search-input" type="search" name="search" id="" placeholder="Search..." />
+            <ul>
+              {roads.map((el) => (
+                <li onClick={() => {this.switchActiveRoad(el)}} key={el.title + el.shortDescription} className={el.isActive ? "active road-item" : "road-item"}>
+                  <div className="road-icon">
+                    <i className="fas fa-arrows-alt"></i>
+                  </div>
+                  <div className="road-info">
+                    <div className="road-title">
+                      {el.isFavorite && <i className="fas fa-star"></i>}
+                      <h3>{el.title}</h3>
+                    </div>
+                    <p>{el.shortDescription = el.shortDescription.substr(0, 80)}</p>
+                  </div>
+                  <div className="path-length">
+                    {el.length}
+                  </div>
+                  <i className="fas fa-chevron-right"></i>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="col-md-5">
+            {<Details addToFavorites={addToFavorites} removeRoad={removeRoad} info={this.state.info}/>}
+          </div>
+        </div>
       </React.Fragment>
     );
   }

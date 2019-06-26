@@ -20,9 +20,7 @@ class AddRoad extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-
   }
-
 
   render() {
     return (
@@ -34,11 +32,11 @@ class AddRoad extends Component {
               <Form.Control type="text" placeholder="Title" />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Example textarea</Form.Label>
-              <Form.Control as="textarea" rows="3" />
+              <Form.Label>Short Description</Form.Label>
+              <Form.Control as="textarea" rows="3" maxLength="160"/>
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Example textarea</Form.Label>
+              <Form.Label>Full Desxcription</Form.Label>
               <Form.Control as="textarea" rows="3" />
             </Form.Group>
             <span>Length: 2.21</span>
@@ -70,5 +68,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddRoad)
-
-

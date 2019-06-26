@@ -1,0 +1,43 @@
+{
+    "roads": [{
+      "id": 1,
+      "title": "Title 1, Home - work",
+      "isFavorite": true,
+      "isActive": false,
+      "length": 2.27,
+      "shortDescription": "Short description Lorem ipsum",
+      "fullDescription": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla perspiciatis saepe provident veritatis repellendus dignissimos nesciunt odio iure eum, itaque nemo soluta cupiditate, ipsa recusandae. Cum ullam vel eum neque.",
+      "path": ""
+    },
+    {
+      "id": 1,
+      "title": "Title 2, Work - Dinner",
+      "isFavorite": true,
+      "isActive": false,
+      "length": 1.17,
+      "shortDescription": "Short description Lorem ipsum",
+      "fullDescription": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla perspiciatis saepe provident veritatis repellendus dignissimos nesciunt odio iure eum, itaque nemo soluta cupiditate, ipsa recusandae. Cum ullam vel eum neque. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla perspiciatis saepe provident veritatis repellendus dignissimos nesciunt odio iure eum, itaque nemo soluta cupiditate, ipsa recusandae. Cum ullam vel eum neque.",
+      "path": ""
+    },
+    {
+      "id": 3,
+      "title": "Title 3, Dinner - Work",
+      "isFavorite": false,
+      "isActive": false,
+      "length": 1.27,
+      "shortDescription": "Short description Lorem ipsum",
+      "fullDescription": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla perspiciatis saepe provident veritatis repellendus dignissimos nesciunt odio iure eum, itaque nemo soluta ",
+      "path": ""
+    },
+    {
+      "id": 4,
+      "title": "Title 4, Work - Home",
+      "isFavorite": false,
+      "isActive": false,
+      "length": 4.27,
+      "shortDescription": "Short description Lorem ipsum",
+      "fullDescription": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla perspiciatis saepe provident veritatis repellendus dignissimos nesciunt odio iure eum, itaque nemo soluta cupiditate, ipsa recusandae. Cum ullam vel eum neque. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla perspiciatis saepe provident veritatis repellendus dignissimos nesciunt odio iure eum, itaque nemo soluta cupiditate, ipsa recusandae. Cum ullam vel eum neque. lorem lorem",
+      "path": ""
+    }
+  ]
+}

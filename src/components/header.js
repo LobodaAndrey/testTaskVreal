@@ -29,8 +29,8 @@ class Header extends React.Component {
         <header className="main-header">
           <h1>Saunter</h1>
           <Button variant="primary" onClick={this.handleShow}>
-            Launch demo modal
-        </Button>
+            Add new Road
+          </Button>
           <Modal show={this.state.show} onHide={this.handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Add new road</Modal.Title>
@@ -41,9 +41,6 @@ class Header extends React.Component {
             <Modal.Footer>
               <Button variant="secondary" onClick={this.handleClose}>
                 Close
-            </Button>
-              <Button variant="primary" onClick={this.handleClose}>
-                Save Changes
             </Button>
             </Modal.Footer>
           </Modal>
