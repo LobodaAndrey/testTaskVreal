@@ -1,3 +1,8 @@
 .road-details {
   padding: 30px;
 }
+.btn-group {
+  &>* {
+    margin: 10px;
+  }
+}

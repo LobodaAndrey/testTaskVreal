@@ -24,6 +24,7 @@ class Header extends React.Component {
   }
 
   render() {
+    const { addRoad } = this.props
     return (
       <>
         <header className="main-header">
@@ -36,7 +37,7 @@ class Header extends React.Component {
               <Modal.Title>Add new road</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <AddRoad />
+              <AddRoad addRoad={addRoad}/>
             </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={this.handleClose}>

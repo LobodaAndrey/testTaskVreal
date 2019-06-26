@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './details.scss';
+import {Button} from 'react-bootstrap';
 // import GoogleMapReact from 'google-map-react';
 
 class Details extends Component {
@@ -38,10 +39,10 @@ class Details extends Component {
             </div>
             <div className="btn-group">
               <div className="add-to-fav">
-                <button onClick={addToFavorites}>Add to favorites</button>
+              <Button variant="success" onClick={addToFavorites}>Add to favorites</Button>
               </div>
               <div className="remove">
-                <button onClick={removeRoad}>Remove</button>
+                <Button onClick={removeRoad} variant="danger">Remove</Button>
               </div>
             </div>
           </div>

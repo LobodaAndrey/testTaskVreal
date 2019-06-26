@@ -17,3 +17,4 @@ export const addToFavorites = (id, isFavorite) => ({
   id,
   isFavorite
 });
+

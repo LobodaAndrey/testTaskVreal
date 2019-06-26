@@ -7,19 +7,19 @@ import * as data from '../data.json';
 class RoadsList extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props)
     this.state = {
       roads: data.default.roads,
-      info: {
-      }
+      info: {}
     }
   }
 
   // componentDidMount() {
-  //   axios.get('https://roads-app.firebaseio.com/')
+  //   axios.get('https://roads-app.firebaseio.com/roads.json')
   //   .then(function (response) {
   //     // handle success
-  //     console.log(response);
+  //     const dataa = response.data;
+  //     console.log(response.data);
+  //     return dataa
   //   })
   //   .catch(function (error) {
   //     // handle error
@@ -30,6 +30,7 @@ class RoadsList extends Component {
   //   });
   // }
 
+ 
   switchActiveRoad = (el) => {
     this.setState({
       info: el
@@ -53,7 +54,7 @@ class RoadsList extends Component {
                   </div>
                   <div className="road-info">
                     <div className="road-title">
-                      {el.isFavorite && <i className="fas fa-star"></i>}
+                      {el.isFavorite && <i className="fas fa-star favorite"></i>}
                       <h3>{el.title}</h3>
                     </div>
                     <p>{el.shortDescription = el.shortDescription.substr(0, 80)}</p>

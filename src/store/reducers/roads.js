@@ -1,4 +1,4 @@
-import {GET_ROADS, ADD_NEW_ROAD, REMOVE_ROAD, ADD_TO_FAVORITES} from '../../constants'
+import { GET_ROADS, ADD_NEW_ROAD, REMOVE_ROAD, ADD_TO_FAVORITES } from '../../constants';
 
 const initialState = {
   roads: []
@@ -11,7 +11,7 @@ export default function roadsReducer(state = initialState, action) {
         ...state,
         roads: action.roads
       };
-    case ADD_NEW_ROAD: 
+    case ADD_NEW_ROAD:
       return {
         ...state
       };
@@ -19,11 +19,11 @@ export default function roadsReducer(state = initialState, action) {
       return {
         ...state
       };
-  case ADD_TO_FAVORITES:
-    return {
-      ...state,
-      
-    };
+    case ADD_TO_FAVORITES:
+      return {
+        ...state,
+
+      };
     default:
       return state
   }
